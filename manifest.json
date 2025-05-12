@@ -1,15 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "Gemini Query",
+  "name": "Key Logger Console",
   "version": "1.0",
-  "description": "Envia consultas iniciadas com ?? para a API do Gemini",
-  "permissions": ["activeTab", "scripting"],
-  "host_permissions": ["<all_urls>"],
-  "action": {},
+  "description": "Escuta e printa todas as teclas pressionadas no console.",
+  "permissions": ["scripting"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_idle"
     }
   ]
 }
